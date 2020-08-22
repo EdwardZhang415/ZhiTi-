@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>新一代的编程学习平台-智梯 我的团队（新建题库）</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/myTeam.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+  <script src="js/my/connect.js"></script>
+  <script src="js/my/myTeam.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body onload="pageLoad();">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="homepage.html">
+          <span class="navh1">智梯</span>
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="questionBank.html">题库
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li>
+            <a href="makeABreakthrough.html">闯关</a>
+          </li>
+          <li>
+            <a href="ranklist.html">排行榜</a>
+          </li>
+          <li class="active">
+            <a href="myTeam.html">我的团队</a>
+          </li>
+        </ul>
+        <!-- <form class="navbar-form navbar-left">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="请输入题库/测试">
+          </div>
+          <button type="submit" class="btn btn-default">搜索</button>
+        </form> -->
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a id="userWelcome" href="#"></a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="glyphicon glyphicon-user"></span>
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="people.html">个人中心</a>
+              </li>
+              <li>
+                <a href="myTeam.html">我的团队</a>
+              </li>
+              <li>
+                <a href="#">我的收藏</a>
+              </li>
+              <li>
+                <a href="#">我的测试</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <a href="#">提交记录</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+  <!--content  -->
+  <div class="content_C">
+    <div class="content_header_reset">
+      <div class="content_header1">
+        <div class="col-md-10 col-sm-7">
+          <h2 id="TeamName">杭电-python</h2>
+          <div class="lwz">团队宣言</div>
+          <div class="fbt" id="teamDeclaration"> 暂无</div>
+          <div class="row rm1">
+            <div class="col-md-6  bt">我在团队的身份</div>
+            <div class="col-md-6 rwz1">
+              <button class="btn btn-primary" data-toggle="modal" data-target="#modifyInformation">修改信息、退出团队</button>&nbsp;
+              <button class="btn btn-primary" data-toggle="modal" data-target="#addteammember">添加新成员</button>
+            </div>
+          </div>
+          <!-- 
+              <div class="row rm1">
+                <div class="col-md-8 fbt">我的备注名称：团队主管理员</div>
+              </div> -->
+          <div class="row rm1">
+            <div class="col-md-6 fbt">我的小组：A1</div>
+          </div>
+          <div class="row rm1">
+            <div class="col-md-6 bt">团队作业</div>
+            <div class="col-md-6 rwz1">
+              <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="location.href='newWork.html'">新建作业</button>
+            </div>
+          </div>
+          <div id="zuoyeview" style="/*max-height: 400px; overflow: auto; width: 100%;*/">
+
+            <div class="row rm1">
+              <div class="col-md-6 fbt">
+                <span>第1次</span>
+                <span> 5题</span>
+                <span> 10人</span>
+              </div>
+            </div>
+          </div>
+          <div class="row rm1">
+            <div class="col-md-6 bt">团队题库</div>
+            <div class="col-md-6 rwz1">
+              <button onclick="window.open('newTopic.html')" class="btn btn-primary">新建题库</button>
+            </div>
+          </div>
+          <div class="row rm1">
+            <div class="col-md-12 fbt">
+              <span>T24253 </span>
+              <span> 华氏温度转为摄氏温度 </span>
+              <span> 113次提交</span>
+            </div>
+          </div>
+          <div class="row rm1">
+            <div class="col-md-12 fbt">
+              <span>T24253 </span>
+              <span> 华氏温度转为摄氏温度 </span>
+              <span> 113次提交</span>
+            </div>
+          </div>
+          <div class="form-group" id="teamMem">
+            <div class="row rm1">
+              <div class="col-md-6 bt">团队成员</div>
+              <div class="col-md-6 rwz1">
+                <button id="teamEdit" class="btn btn-primary">成员管理</button>
+              </div>
+            </div>
+            <div class="memberBox" id="normalBox" style="width:510px;"></div>
+            <!-- <div class="bt">团队管理员</div>
+            <div class="checkbox memberBox" id="adminBox">
+            </div>
+            <div class="bt">普通成员</div>
+            <div class="checkbox memberBox" id="normalBox">
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <!-- 右边菜单栏 🔜-->
+      <div class="col-md-5 col-sm-5 content_header2">
+        <div class="row">
+          <div class="col-md-6  rwz" id="TeamNum">49</div>
+          <div class="col-md-6  rwz">1</div>
+        </div>
+        <div class="row rm1">
+          <div class="col-md-6  rwz1">团队人数</div>
+          <div class="col-md-6  rwz1">团队级别</div>
+        </div>
+        <div class="row rm1">
+          <div class="col-md-6  rwz1">创建时间</div>
+          <div class="col-md-6  rwz1" id="createTime">2018-03-14</div>
+        </div>
+        <div class="row rm1">
+          <div class="col-md-6  rwz1">公开度</div>
+          <div class="col-md-6  rwz1">隐藏团队、加入无需审核</div>
+        </div>
+        <div class="row rm1">
+          <div class="col-md-6  rwz1">队长</div>
+          <div class="col-md-6  rwz1" id="TeamCreator">Vhan</div>
+        </div>
+        <div class="row rm1">
+          <div class="col-md-12  rwz1">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#teamsettingsModal">团队设置</button>
+          </div>
+
+        </div>
+
+      </div>
+      <!--右边菜单栏 🔚  -->
+    </div>
+  </div>
+  <div>
+    <!-- 管理员设置Modal -->
+    <div class="modal fade" id="editManager" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">添加团队成员</h4>
+          </div>
+          <div class="modal-body">
+            <div class="col-sm-10">
+              在这里设置的姓名，只有相同团队的成员可以看到；分组为相同的成员，可以被归为一类，便于管理。
+            </div>
+            <form class="form-horizontal">
+              <div class="form-group rm">
+                <label for="input" class="col-sm-2 control-label">用户名</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="input" placeholder="对方的用户名">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-default" data-dismiss="modal" onclick="deleteTeam();">移出/退出团队</button> -->
+            <button type="button" class="btn btn-primary" onclick="addMember($(this));">添加该成员</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 团队设置Modal -->
+    <div class="modal fade" id="teamsettingsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">杭电-python</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal">
+              <div class="form-group rm">
+                <label for="input" class="col-sm-3 control-label">团队宣言：</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="teamDeclaration_input" placeholder="任何人可见">
+                </div>
+              </div>
+              <!-- <div class="form-group rm1">
+                  <label for="input" class="col-sm-3 control-label">团队公开：</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" id="input" placeholder="团队成员可见">
+                  </div>
+                </div> -->
+              <div class="form-group rm1">
+                <label for="input" class="col-sm-3 control-label">公开程度：</label>
+                <div class="col-sm-9">
+                  <div class="radio" id="opennessType">
+                    <label>
+                      <input type="radio" value="PUBLIC"> 公开
+                    </label>
+                    <label>
+                      <input type="radio" value="SEMI_PUBLIC"> 半公开
+                    </label>
+                    <label>
+                      <input type="radio" value="PRIVATE" disabled> 禁止加入
+                    </label>
+
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary" onclick="setTeam();">保存设置</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 修改信息、退出团队Modal -->
+    <div class="modal fade" id="modifyInformation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">团队成员管理</h4>
+          </div>
+          <div class="modal-body">
+            <div class="col-sm-10">
+              在这里设置的姓名，只有相同团队的成员可以看到；分组为相同的成员，可以被归为一类，便于管理。
+            </div>
+            <form class="form-horizontal">
+              <div class="form-group rm">
+                <label for="input" class="col-sm-2 control-label">姓名</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="input" placeholder="你的姓名">
+                </div>
+              </div>
+              <div class="form-group rm1">
+                <label for="input" class="col-sm-2 control-label">分组</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="input" placeholder="团队管理员">
+                </div>
+              </div>
+              <div class="form-group rm1">
+                <label for="input" class="col-sm-2 control-label"></label>
+                <div class="col-sm-10">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> 拥有管理员权限
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="deleteTeam();">退出团队</button>
+            <button type="button" class="btn btn-primary" onclick="setTeamMember();">修改我的信息</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 添加团队成员Modal -->
+    <div class="modal fade" id="addteammember" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">添加团队成员</h4>
+          </div>
+          <div class="modal-body">
+            <div class="col-sm-10">
+              在这里设置的姓名，只有相同团队的成员可以看到；分组为相同的成员，可以被归为一类，便于管理。
+            </div>
+            <form class="form-horizontal">
+              <div class="form-group rm">
+                <label for="input" class="col-sm-2 control-label">用户名</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="input" placeholder="对方的用户名">
+                </div>
+              </div>
+              <!-- <div class="form-group rm1">
+                  <label for="input" class="col-sm-2 control-label">分组</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="input" placeholder="团队管理员">
+                  </div>
+                </div> -->
+              <!-- <div class="form-group rm1">
+                  <label for="input" class="col-sm-2 control-label"></label>
+                  <div class="col-sm-10">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox"> 拥有管理员权限
+                      </label>
+                    </div>
+                  </div>
+                </div> -->
+            </form>
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-default" data-dismiss="modal" onclick="deleteTeam();">移出/退出团队</button> -->
+            <button type="button" class="btn btn-primary" onclick="addMember($(this));">添加该成员</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>

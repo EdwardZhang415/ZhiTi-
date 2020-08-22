@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>新一代的编程学习平台-智梯 注册页面</title>
+    <style type="text/css">
+    *{margin: 0; padding: 0;}
+    body{background-image: url(images/u1.jpg);}
+    ul{list-style: none; width: 270px; margin: 10px auto; }
+    ul li{width: 90px; float: left; text-align: center;}
+    .top{display: block; margin: 30px 0; text-align: center;}
+    .top_img{width: 156px; height: 45px; margin: 20px;}
+    .top_title{text-align: center;}
+    .wrape{width: 380px; margin: 200px auto; font-size: 16px;}
+    .top_title, .foot{color: rgba(0,0,0,0.427);}
+    .tips{clear: both;}
+    .foot{margin: 50px 0;}
+    .copyright{margin: 50px 0; text-align:center;}
+    #myForm label{display: block; margin: 15px 0;}
+    #myForm input{display: inline-block; width: 380px; border: 1px solid rgb(217,217,217); border-radius: 4px; line-height: 28px; padding-left: 5px; font-size: 16px;}
+    #phone{width: 306px;}
+    #before_phone{display: inline-block; width: 68px; border: 1px solid rgb(217,217,217); border-radius: 4px; border-right: none; line-height: 28px; text-align: center;}
+    #copyright_img{width: 10px; height: 8px; display: inline-block; margin: 10px 0 10px;}
+    </style>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/my/connect.js"></script>
+    
+</head>
+<body>
+    <div class="wrape">
+        <div class="top">
+            <img class="top_img" src="images/u45.png">
+            <p class="top_title">OPEN JUDGE是杭州最具影响力的 编程教育网站</p>
+        </div>
+        <form id="myForm" action="" method="post">
+            <p class="form_title">注册</p>
+            <label for="email"><input type="text" name="email" placeholder="邮箱" id='email'></label>
+            <label for="pwd"><input type="password" name="pwd" placeholder="6-16位密码，区分大小写" id='pw1'></label>
+            <label for="pwd2"><input type="password" name="pwd2" placeholder="确认密码" id='pw2'></label>
+            <label for="phone"><span id="before_phone">+86</span><input id="phone" type="text" name="phone" placeholder="11位手机号" style="width: 304px;"></label>
+            <label for="pwd3">
+                <input type="text" id="msg_num" name="pwd3" placeholder="输入验证码" style="width: 250px">
+                <input type="button" name="btn_pwd3" value="获取验证码" style="width: 110px; float: right; background-color: #fff;" onclick="getMsgNum(this)">
+            </label>
+            <input name="submit"  type="button" value="注册" style="width: 176px; background-color: rgb(24,114,255); color: #fff;" onclick="validateNum()"><a href="login.html" style="display: inline-block; float: right; width: 112px; font-size: 14px; line-height: 28px; text-align: center; text-decoration: none;">使用已有账户登录</a>
+        </form>
+        <footer class="foot">
+            <div class="tips">
+                <ul>
+                    <li><a>帮助</a></li>
+                    <li><a>隐私</a></li>
+                    <li><a>条款</a></li>
+                </ul>
+            </div>
+            <div class="copyright"><p>copyright<img id="copyright_img" src="images/u40.png"><span style="font-family:'Arial Normal', 'Arial';">2018</span><span style="font-family:'Microsoft YaHei Regular', 'Microsoft YaHei';"> 智梯体验技术部出品</span></p></div>
+        </footer>
+    </div>
+    <script type="text/javascript">
+        var messageData = null;
+        var wait = 120; // 短信验证码120秒后才可获取下一个
+
+        /**
+         * 获取验证码
+         * @param that
+         */
+        function getMsgNum(that) {
+            var x=document.getElementById("phone").value;
+            var myreg=/1[0-9]{10}/;
+            if (!myreg.test(x)) {
+                alert("手机号码格式输入错误");
+                return;
+            }
+            var phoneNumber = x;
+            setButtonStatus(that); // 设置按钮倒计时
+            var obj = {
+                phoneNumber: phoneNumber
+            };
+
+            $.ajax({
+                url: Host+RequestUrl.sendMsg, // 后台短信发送接口
+                type: 'POST',
+                dataType: 'json',
+                contentType: "application/json",
+                async: false, //false 同步
+                data: JSON.stringify(obj),
+                xhrFields: {
+                    withCredentials: true
+                },
+                success: function (result) {
+                    if(result.code === 0 ) {
+                        messageData = result.data;
+                    }else {
+                        alert("错误码:" + data.code + "  错误信息:" + data.message);
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    console.log(XMLHttpRequest.status);
+                    console.log(XMLHttpRequest.readyState);
+                    console.log(textStatus);
+                }
+            });
+        }
+        /**
+         * 设置按钮状态
+         */
+        function setButtonStatus(that) {
+            if (wait == 0) {
+                that.removeAttribute("disabled");
+                that.value="免费获取验证码";
+                wait = 60;
+            } else {
+                that.setAttribute("disabled", true);
+                that.value=wait+"秒后可以重新发送";
+                wait--;
+                setTimeout(function() {
+                    setButtonStatus(that)
+                }, 1000)
+            }
+        }
+
+        /**
+         * 注册按钮
+         */
+        function validateNum() {
+            var userid=$("#email").val();
+            var pw1=$("#pw1").val();
+            var pw2=$("#pw2").val();
+            var myreg2=/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+            if (!myreg2.test(userid)) 
+            {
+                alert("用户名格式错误");
+                return;
+            }
+            else{
+                if (pw1.length<6||pw1.length>16) {
+                    alert("密码长度不正确");
+                    return;
+                }
+                else{
+                    if (pw1!=pw2) 
+                    {
+                        alert("两次输入的密码不一致");
+                        return;
+                    }
+                }
+            }
+            if (messageData == null) {
+                alert("还没获取验证码");
+                return;
+            }
+            var inputMsgNum = $('#msg_num').val();
+            var data = {
+                msgNum: inputMsgNum,
+                tamp: messageData.tamp,
+                hash: messageData.hash,
+                phone: $("#phone").val(),
+                email: userid,
+                password: pw1
+            };
+
+            $.ajax({
+                url: Host+RequestUrl.validateNum, // 验证接口  注册按钮
+                type: 'POST',
+                dataType: 'json',
+                contentType: "application/json",
+                data: JSON.stringify(data),
+                async: false, //false 同步
+                success: function (data) {
+                    if (data.code == 0) {
+                        window.localStorage.setItem("userid", data.data.id);
+                        window.localStorage.setItem("username", data.data.username);
+                        window.localStorage.setItem("email", data.data.email);
+                        window.localStorage.setItem("phone", data.data.phone);
+                        window.localStorage.setItem("headpic", data.data.headpic);
+                        window.localStorage.setItem("personalitySignature", data.data.personalitySignature);
+                        location.href = 'questionBank.html';
+                    } else {
+                        alert(data.msg);
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    console.log(XMLHttpRequest.status);
+                    console.log(XMLHttpRequest.readyState);
+                    console.log(textStatus);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

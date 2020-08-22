@@ -1,0 +1,281 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>新一代的编程学习平台-智梯 新建团队</title>
+</head>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/my/newteam.css">
+<link rel="stylesheet" href="css/questionBank.css">
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<script src="js/my/connect.js"></script>
+<script src="js/my/newTeam.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	ol,
+	ul {
+		list-style: none;
+	}
+
+	blockquote,
+	q {
+		quotes: none;
+	}
+
+	a {
+		text-decoration: none;
+		color: #2d2f30;
+		-webkit-transition: all .3s linear;
+		-moz-transition: all .3s linear;
+		-o-transition: all .3s linear;
+		-ms-transition: all .3s linear;
+		transition: all .3s linear;
+	}
+
+	a:focus {
+		outline: none;
+	}
+
+	.content {
+		margin: auto;
+		width: 1200px;
+	}
+
+	/* .sx_updown{width:100%;border-top:1px solid #f2f2f2;background:#fff;overflow:hidden;padding:32px 0 40px 0;z-index:9999;position:absolute;left:0;top:120px;text-align:left;} */
+
+	.updown_box {
+		float: left;
+		min-height: 100%;
+		width: 100%;
+		border-left: 1px solid #f2f2f2;
+		padding: 0 50px;
+		-webkit-box-sizing: content-box;
+		-moz-box-sizing: content-box;
+		box-sizing: content-box;
+	}
+
+	.updown_box h3 {
+		font-size: 14px;
+		margin-bottom: 8px;
+		padding-left: 10px;
+	}
+
+	.updown_box ul li {
+		float: left;
+		margin: 0 10px 10px 10px;
+		list-style: none;
+	}
+
+	.updown_box ul li a {
+		display: block;
+		font-size: 14px;
+		padding: 6px 8px;
+		line-height: 18px;
+	}
+
+	.updown_box ul li.selected a {
+		background: #1875f0;
+		color: #fff;
+	}
+
+	.w136 {
+		width: 100%;
+		border-left: 0;
+		padding: 0;
+	}
+
+	.w290 {
+		width: 100%;
+	}
+
+	.w160 {
+		width: 100%;
+		padding: 0 40px;
+	}
+
+	.sousuo {
+		padding: 10px 0 36px 50px;
+		width: 100%;
+	}
+
+	.select-result {
+		width: 1150px;
+		float: left;
+	}
+
+	.select-result ul li a {
+		height: 30px;
+		padding: 0 24px 0 10px;
+		line-height: 30px;
+		display: block;
+		position: relative;
+		float: left;
+		margin: 0 10px 10px 0;
+		color: #fff;
+		font-size: 14px;
+		background: url(images/close1.png) 90% center no-repeat #1875f0;
+	}
+
+	#newTeam {
+		font-size: 16px;
+		padding: 10px 60px;
+		background-color: #169BE9;
+		border: none;
+		border-radius: 10px;
+		color: white;
+		margin: 10px auto;
+	}
+</style>
+
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="homepage.html">
+					<span class="navh1">智梯</span>
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="questionBank.html">题库
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li>
+						<a href="makeABreakthrough.html">闯关</a>
+					</li>
+					<li>
+						<a href="ranklist.html">排行榜</a>
+					</li>
+					<li class="active">
+						<a href="myTeam.html">我的团队</a>
+					</li>
+				</ul>
+				<div class="nav-right">
+					<form class="form-inline" style="margin-left:40px;margin-top:10px;">
+						<select class="form-control">
+							<option>全部</option>
+							<option>1星级</option>
+							<option>2星级</option>
+							<option>3星级</option>
+							<option>4星级</option>
+							<option>5星级</option>
+						</select>
+						<div class="form-group">
+							<!-- <label for="exampleInputName2">搜索</label> -->
+							<input type="text" class="form-control" id="exampleInputName2" placeholder="请输入题库/测试">
+
+						</div>
+						<ul class="nav navbar-nav navbar-right">
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="padding-top:4px">
+									<span class="glyphicon glyphicon-user"></span>
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="people.html">个人中心</a>
+									</li>
+									<li>
+										<a href="myTeam.html">我的团队</a>
+									</li>
+									<li>
+										<a href="#">我的收藏</a>
+									</li>
+									<li>
+										<a href="#">我的测试</a>
+									</li>
+									<li role="separator" class="divider"></li>
+									<li>
+										<a href="#">提交记录</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#" style="padding-top: 4px">GZT</a>
+							</li>
+						</ul>
+					</form>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<div class="container-fluid">
+		<a href="#">闯关 &nbsp; / &nbsp; Python人工智能常用库Numpy使用入门 &nbsp;/&nbsp; 说“你好，世界！”用Python</a>
+	</div>
+	<form class="center form-inline">
+		<div class="footerContent">
+			<div class="row" style="padding-bottom: 30px;">
+				<div class="col-md-1">团队名称:</div>
+				<div class="col-md-4" style="padding-left: 0px;">
+					<input id="teamName" type="text" class="form-control" style="width: 400px;">
+				</div>
+			</div>
+			<div class="row" style="padding-bottom: 30px;">
+				<div class="col-md-1">公开度:</div>
+				<div class="co-md-4">
+					<select id="opennessType" class="form-control" style="width: 400px;">
+						<option value="PRIVATE">私有</option>
+						<option value="SEMI_PUBLIC">半公开</option>
+						<option value="PUBLIC">公开</option>
+					</select>
+				</div>
+			</div>
+			<div class="row" style="padding-bottom: 30px;">
+				<div class="col-md-1">队长:</div>
+				<div class="col-md-4" style="padding-left: 0px;">
+					<input type="text" class="form-control" style="width: 400px;">
+				</div>
+			</div>
+			<div class="row" style="padding-bottom: 30px;">
+				<div class="col-md-1">团队宣言:</div>
+				<div class="col-md-4" style="padding-left: 0px;">
+					<input id="teamDeclaration" type="text" class="form-control" style="width: 400px;">
+				</div>
+			</div>
+			<button id="newTeam" onclick="this.disabled='true';creatTeam();">创建团队</button>
+		</div>
+	</form>
+	<div class="footer">
+		<div class="footerContent">
+			<div class="row">
+				<div class="col-md-2 footerwz1">智梯</div>
+				<div class="col-md-2 footerwz2">菜单</div>
+				<div class="col-md-2 footerwz2"></div>
+				<div class="col-md-2 footerwz2">联系我们</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2 footerwz2">在智梯享受Coding的乐趣</div>
+				<div class="col-md-2 footerwz2">练习</div>
+				<div class="col-md-2 footerwz2">排行榜</div>
+				<div class="col-md-2 footerwz2">+86 178 558-11793</div>
+				<div class="col-md-2 footerwz2">info@openjudge.com</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2 footerwz2">© 2018 智梯 Inc.</div>
+				<div class="col-md-2 footerwz2">测试</div>
+				<div class="col-md-2 footerwz2">关于智梯</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2 footerwz2"></div>
+				<div class="col-md-2 footerwz2">教学资源</div>
+				<div class="col-md-2 footerwz2"></div>
+				<div class="col-md-2 footerwz2">
+					<!-- <ul>
+				<li><img src="images/facebook.png" style="width: 15px;height: 15px;" alt="#"></li>
+			    <li><img src="images/twitter.png" style="width: 15px;height: 15px;" alt="#"></li>
+			</ul> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

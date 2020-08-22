@@ -1,0 +1,376 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>新一代的编程学习平台-智梯 个人中心</title>
+</head>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/main.css">
+<script src="https://cdn.bootcss.com/Chart.js/2.7.2/Chart.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<script src="js/my/connect.js"></script>
+<script src="js/my/people.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	ol,
+	ul {
+		list-style: none;
+	}
+
+	blockquote,
+	q {
+		quotes: none;
+	}
+
+	a {
+		text-decoration: none;
+		color: #2d2f30;
+		-webkit-transition: all .3s linear;
+		-moz-transition: all .3s linear;
+		-o-transition: all .3s linear;
+		-ms-transition: all .3s linear;
+		transition: all .3s linear;
+	}
+
+	a:focus {
+		outline: none;
+	}
+
+	.content {
+		margin: auto;
+		width: 1200px;
+	}
+
+	/* .sx_updown{width:100%;border-top:1px solid #f2f2f2;background:#fff;overflow:hidden;padding:32px 0 40px 0;z-index:9999;position:absolute;left:0;top:120px;text-align:left;} */
+
+	.updown_box {
+		float: left;
+		min-height: 100%;
+		width: 100%;
+		border-left: 1px solid #f2f2f2;
+		padding: 0 50px;
+		-webkit-box-sizing: content-box;
+		-moz-box-sizing: content-box;
+		box-sizing: content-box;
+	}
+
+	.updown_box h3 {
+		font-size: 14px;
+		margin-bottom: 8px;
+		padding-left: 10px;
+	}
+
+	.updown_box ul li {
+		float: left;
+		margin: 0 10px 10px 10px;
+		list-style: none;
+	}
+
+	.updown_box ul li a {
+		display: block;
+		font-size: 14px;
+		padding: 6px 8px;
+		line-height: 18px;
+	}
+
+	.updown_box ul li.selected a {
+		background: #1875f0;
+		color: #fff;
+	}
+
+	.w136 {
+		width: 100%;
+		border-left: 0;
+		padding: 0;
+	}
+
+	.w290 {
+		width: 100%;
+	}
+
+	.w160 {
+		width: 100%;
+		padding: 0 40px;
+	}
+
+	.sousuo {
+		padding: 10px 0 36px 50px;
+		width: 100%;
+	}
+
+	.select-result {
+		width: 1150px;
+		float: left;
+	}
+
+	.select-result ul li a {
+		height: 30px;
+		padding: 0 24px 0 10px;
+		line-height: 30px;
+		display: block;
+		position: relative;
+		float: left;
+		margin: 0 10px 10px 0;
+		color: #fff;
+		font-size: 14px;
+		background: url(images/close1.png) 90% center no-repeat #1875f0;
+	}
+
+	.mainContent {
+		max-width: 90%;
+		margin: 0 auto;
+		min-width: 600px;
+		display: -webkit-flex;
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: flex-start;
+	}
+
+	.mainContent .leftPage {
+		float: left;
+		width: 300px;
+		background-color: white;
+		padding: 30px;
+		text-align: center;
+	}
+
+	.mainContent .leftPage table {
+		font-size: 14px;
+		width: 100%;
+		text-align: left;
+		margin: 20px auto;
+	}
+
+	.mainContent .leftPage button {
+		font-size: 14px;
+		padding: 7px 60px;
+	}
+
+	.mainContent .rightPage {
+		float: right;
+		width: 70%;
+		margin-left: 40px;
+	}
+
+	.mainContent .bigBox {
+		width: 100%;
+		background-color: white;
+		padding: 50px;
+		margin-bottom: 30px;
+	}
+
+	.bigBox h2 {
+		margin-top: 0;
+		margin-bottom: 20px;
+	}
+
+	#yjscs,
+	#tjjl,
+	#dwczy {
+		border-collapse: collapse;
+		width: 100%;
+		text-align: center;
+	}
+
+	/*#yjscs tr,#tjjl tr,#dwczy tr{border-bottom: 1px solid black; border-top: 1px solid black; line-height: 40px; height: 40px;}*/
+</style>
+
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="homepage.html">
+					<span class="navh1">智梯</span>
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="questionBank.html">题库
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li>
+						<a href="makeABreakthrough.html">闯关</a>
+					</li>
+					<li>
+						<a href="ranklist.html">排行榜</a>
+					</li>
+					<li>
+						<a href="myTeam.html">我的团队</a>
+					</li>
+				</ul>
+				<div class="nav-right">
+					<form class="form-inline" style="margin-left:40px;margin-top:10px;">
+						<!-- <select class="form-control">
+		<option>全部</option>
+		<option>1星级</option>
+  		<option>2星级</option>
+  		<option>3星级</option>
+ 		<option>4星级</option>
+  		<option>5星级</option>
+	</select> -->
+						<div class="form-group">
+							<!-- <label for="exampleInputName2">搜索</label> -->
+							<!-- <input type="text" class="form-control" id="exampleInputName2" placeholder="请输入题库/测试" > -->
+
+						</div>
+						<ul class="nav navbar-nav navbar-right">
+							<li>
+								<a href="#" style="padding-top: 4px" id="userWelcome"></a>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="padding-top:4px">
+									<span class="glyphicon glyphicon-user"></span>
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="people.html">个人中心</a>
+									</li>
+									<li>
+										<a href="myTeam.html">我的团队</a>
+									</li>
+									<li>
+										<a href="#">我的收藏</a>
+									</li>
+									<li>
+										<a href="#">我的测试</a>
+									</li>
+									<li role="separator" class="divider"></li>
+									<li>
+										<a href="#">提交记录</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</form>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+
+	<div class="mainContent">
+		<div class="leftPage" id="infoPage">
+			<img src="images/python.svg" style="width: 50%;">
+			<div class="infoBox">
+				<table>
+					<tr>
+						<td>用户名</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>账号</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>所属学校</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>个性签名</td>
+						<td></td>
+					</tr>
+				</table>
+				<textarea name="" id="gexingqianming" cols="30" rows="10" style="display: none;"></textarea>
+			</div>
+			<button class="btn btn-default" onclick="$('#gexingqianming').show(); $('#setGeQian').show(); this.display='none';">编辑</button>
+			<button onclick="setGeQian();" style="display: none;" id="setGeQian">完成</button>
+		</div>
+		<div class="rightPage">
+			<div class="bigBox">
+				<h2>累计通过率</h2>
+				<canvas id="tglChart"></canvas>
+				<!-- 绘制折线图 -->
+				<!-- <script>
+				var ctx_tglChart = document.getElementById("tglChart").getContext('2d');
+				var tglChart = new Chart(ctx_tglChart, {
+					type: 'line',
+					data: {
+						labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+						datasets: [{
+							label: '累计通过率 %',
+							data: [12, 19, 3, 5, 2, 3],
+							backgroundColor: [
+								'rgba(22,155,213,0.2)'
+							],
+							borderColor: [
+								'rgba(22,155,213,1)'
+							],
+							borderWidth: 1
+						}]
+					},
+					options: {
+						scales: {
+							yAxes: [{
+								ticks: {
+									beginAtZero: true // 纵坐标从0开始
+								}
+							}]
+						},elements: {
+							line: {
+								tension: 0 // 禁用贝塞尔曲线
+							}
+						}
+					}
+				});
+			</script> -->
+			</div>
+			<div class="bigBox">
+				<h2 id="unfinished">待完成作业</h2>
+				<table id="dwczy" class="table table-striped">
+				</table>
+			</div>
+			<div class="bigBox">
+				<h2>所有作业</h2>
+				<table id="yjscs" class="table table-striped">
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="footer">
+		<div class="footerContent">
+			<div class="row">
+				<div class="col-md-2 footerwz1">智梯</div>
+				<div class="col-md-2 footerwz2">菜单</div>
+				<div class="col-md-2 footerwz2"></div>
+				<div class="col-md-2 footerwz2">联系我们</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2 footerwz2">在智梯享受Coding的乐趣</div>
+				<div class="col-md-2 footerwz2">练习</div>
+				<div class="col-md-2 footerwz2">排行榜</div>
+				<div class="col-md-2 footerwz2">+86 178 558-11793</div>
+				<div class="col-md-2 footerwz2">info@openjudge.com</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2 footerwz2">© 2018 智梯 Inc.</div>
+				<div class="col-md-2 footerwz2">测试</div>
+				<div class="col-md-2 footerwz2">关于智梯</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2 footerwz2"></div>
+				<div class="col-md-2 footerwz2">教学资源</div>
+				<div class="col-md-2 footerwz2"></div>
+				<div class="col-md-2 footerwz2">
+					<!-- <ul>
+				<li><img src="images/facebook.png" style="width: 15px;height: 15px;" alt="#"></li>
+				<li><img src="images/twitter.png" style="width: 15px;height: 15px;" alt="#"></li>
+			</ul> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

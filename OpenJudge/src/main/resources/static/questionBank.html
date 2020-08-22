@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>新一代的编程学习平台-智梯 题库</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/questionBank.css">
+  <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+  <script src="js/my/connect.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/my/questionBank.js"></script>
+
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ol,
+    ul {
+      list-style: none;
+    }
+
+    blockquote,
+    q {
+      quotes: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: #2d2f30;
+      -webkit-transition: all .3s linear;
+      -moz-transition: all .3s linear;
+      -o-transition: all .3s linear;
+      -ms-transition: all .3s linear;
+      transition: all .3s linear;
+    }
+
+    a:focus {
+      outline: none;
+    }
+
+    .content {
+      margin: auto;
+      width: 1200px;
+    }
+
+    /* .sx_updown{width:100%;border-top:1px solid #f2f2f2;background:#fff;overflow:hidden;padding:32px 0 40px 0;z-index:9999;position:absolute;left:0;top:120px;text-align:left;} */
+
+    .updown_box {
+      float: left;
+      min-height: 100%;
+      width: 100%;
+      border-left: 1px solid #f2f2f2;
+      padding: 0 50px;
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+    }
+
+    .updown_box h3 {
+      font-size: 14px;
+      margin-bottom: 8px;
+      padding-left: 10px;
+    }
+
+    .updown_box ul li {
+      float: left;
+      margin: 0 10px 10px 10px;
+      list-style: none;
+    }
+
+    .updown_box ul li a {
+      display: block;
+      font-size: 14px;
+      padding: 6px 8px;
+      line-height: 18px;
+    }
+
+    .updown_box ul li.selected a {
+      background: #1875f0;
+      color: #fff;
+    }
+
+    .w136 {
+      width: 100%;
+      border-left: 0;
+      padding: 0;
+    }
+
+    .w290 {
+      width: 100%;
+    }
+
+    .w160 {
+      width: 100%;
+      padding: 0 40px;
+    }
+
+    .sousuo {
+      padding: 10px 0 36px 50px;
+      width: 100%;
+    }
+
+    .select-result {
+      width: 1150px;
+      float: left;
+    }
+
+    .select-result ul li a {
+      height: 30px;
+      padding: 0 24px 0 10px;
+      line-height: 30px;
+      display: block;
+      position: relative;
+      float: left;
+      margin: 0 10px 10px 0;
+      color: #fff;
+      font-size: 14px;
+      background: url(images/close1.png) 90% center no-repeat #1875f0;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="homepage.html">
+          <span class="navh1">智梯</span>
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="#">题库
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li>
+            <a href="makeABreakthrough.html">闯关</a>
+          </li>
+          <li>
+            <a href="ranklist.html">排行榜</a>
+          </li>
+          <li>
+            <a href="myTeam.html">我的团队</a>
+          </li>
+        </ul>
+        <div class="navbar-form navbar-left nav-search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="请输入题库/测试">
+          </div>
+          <button class="btn btn-default" id="nav-search">搜索</button>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#" id="userWelcome"></a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="glyphicon glyphicon-user"></span>
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="people.html">个人中心</a>
+              </li>
+              <li>
+                <a href="myTeam.html">我的团队</a>
+              </li>
+              <li>
+                <a href="#">我的收藏</a>
+              </li>
+              <li>
+                <a href="#">我的测试</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <a href="#">提交记录</a>
+              </li>
+            </ul>
+          </li>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+  <!--content-->
+  <div class="content_C">
+    <div class="content_header">
+      <div class="form-inline" style="margin-left:40px;margin-top:24px;">
+        <div class="form-group">
+          <!-- <label for="exampleInputName2">搜索</label> -->
+          <input type="text" class="form-control" id="exampleInputName2" placeholder="请输入题库/测试">
+        </div>
+        <select id="starSelect" class="form-control">
+          <option value="0">选择难度</option>
+          <option value="1">1星级</option>
+          <option value="2">2星级</option>
+          <option value="3">3星级</option>
+          <option value="4">4星级</option>
+          <option value="5">5星级</option>
+        </select>
+        <button type="submit" class="btn btn-default search-button">搜索</button>
+      </div>
+      <div class="sx_updown clearfix">
+        <div class="content">
+          <div class="updown_box w160">
+            <h3></h3>
+            <ul id="select1"></ul>
+          </div>
+          <!-- <div class="updown_box w160">
+              <h3>题库</h3>
+              <ul id="select1">
+                <li data-type="1"><a href="javascript:;">智梯题库</a></li>
+                <li data-type="2"><a href="javascript:;">SPOJ</a></li>
+                <li data-type="3"><a href="javascript:;" >CodeForces</a></li>
+                <li data-type="4"><a href="javascript:;">UVa</a></li>
+                <li data-type="5"><a href="javascript:;">AtCoder</a></li>
+
+              </ul>
+            </div>
+          <div class="updown_box w160">
+              <h5>采用标签</h5>
+              <ul id="select2">
+                <li data-type="6"><a href="javascript:;">字符串</a></li>
+                <li data-type="7"><a href="javascript:;">动态规划</a></li>
+                <li data-type="8"><a href="javascript:;">搜索</a></li>
+                <li data-type="9"><a href="javascript:;">数论</a></li>
+                <li data-type="10"><a href="javascript:;">二叉推</a></li>
+              </ul>
+            </div>
+          <div class="updown_box w160">
+              <h5>来源</h5>
+              <ul id="select3">
+                <li data-type="11"><a href="javascript:;">USACO</a></li>
+                <li data-type="12"><a href="javascript:;">各省省选</a></li>
+                <li data-type="13"><a href="javascript:;" >WC/CTSC/集训队</a></li>
+                <li data-type="14"><a href="javascript:;">POI</a></li>
+                <li data-type="15"><a href="javascript:;">NOI系列</a></li>
+              </ul>
+            </div>
+          <div class="updown_box w160">
+              <h5>时间</h5>
+              <ul id="select4">
+                <li data-type="16"><a href="javascript:;">2013</a></li>
+                <li data-type="17"><a href="javascript:;">2014</a></li>
+                <li data-type="18"><a href="javascript:;">2015</a></li>
+                <li data-type="19"><a href="javascript:;">2016</a></li>
+                <li data-type="20"><a href="javascript:;">2017</a></li>
+              </ul>
+            </div>
+          <div class="updown_box w160">
+              <h5>地区</h5>
+              <ul id="select5">
+                <li data-type="21"><a href="javascript:;">浙江</a></li>
+                <li data-type="22"><a href="javascript:;">上海</a></li>
+                <li data-type="23"><a href="javascript:;">北京</a></li>
+                <li data-type="24"><a href="javascript:;">江苏</a></li>
+                <li data-type="25"><a href="javascript:;">广东</a></li>
+              </ul>
+            </div>
+          </div> -->
+        </div>
+        <div class="sousuo clearfix">
+          <div class="select-result clearfix">
+            <ul>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="tkbox">
+      <div class="tk1">
+        <div class="tkcontent">
+          <div class="row">
+            <div class="col-md-1">
+              <span class="leftfont">TP001</span>
+            </div>
+            <div class="col-md-2">
+              <span class="f1">Python人工智能入门</span>
+            </div>
+            <div class="col-md-3">
+              <span class="label label-success">字符串</span>
+              <span class="label label-danger">排序</span>
+              <span class="label label-primary">算法</span>
+            </div>
+            <div class="col-md-2">
+              <span class="tk_cwz">难度系数</span>
+              <br/>
+              <span>
+                <img src="images/star_1.svg">
+              </span>
+            </div>
+            <div class="col-md-2">
+              <span class="tk_cwz">通过人数</span>
+              <br/>
+              <span class="tk_cfwz">123</span>
+            </div>
+            <div class="col-md-2">
+              <span class="tk_cwz">提交人数</span>
+              <br/>
+              <span class="tk_cfwz">123</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tk1">
+        <div class="tkcontent">
+          <div class="row">
+            <div class="col-md-1">
+              <span class="leftfont">TP001</span>
+            </div>
+            <div class="col-md-2">
+              <span class="f1">Python人工智能入门</span>
+            </div>
+            <div class="col-md-3">
+              <span class="label label-success">字符串</span>
+              <span class="label label-danger">排序</span>
+              <span class="label label-primary">算法</span>
+            </div>
+            <div class="col-md-2">
+              <span class="tk_cwz">难度系数</span>
+              <br/>
+              <span>
+                <img src="images/star_1.svg">
+              </span>
+            </div>
+            <div class="col-md-2">
+              <span class="tk_cwz">通过人数</span>
+              <br/>
+              <span class="tk_cfwz">123</span>
+            </div>
+            <div class="col-md-2">
+              <span class="tk_cwz">提交人数</span>
+              <br/>
+              <span class="tk_cfwz">123</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pageChanger">
+      <nav style="text-align: center">
+        <ul class="pagination">
+          <li>
+            <a href="#" value="1">&laquo;首页</a>
+          </li>
+          <li>
+            <a href="#" value="1">1</a>
+          </li>
+          <li>
+            <a href="#" value="2">2</a>
+          </li>
+          <li>
+            <a href="#" value="3">3</a>
+          </li>
+          <li>
+            <a href="#" value="4">4</a>
+          </li>
+          <li>
+            <a href="#" value="5">5</a>
+          </li>
+          <li>
+            <a href="#" value="100">尾页&raquo;</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer">
+      <div class="footerContent">
+        <div class="row">
+          <div class="col-md-4 footerwz1">智梯</div>
+          <div class="col-md-3 footerwz2">菜单</div>
+          <div class="col-md-4 footerwz2">联系我们</div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 footerwz2">在智梯享受Coding的乐趣</div>
+          <div class="col-md-3 footerwz2">
+            <a href="questionBank.html">题库</a>
+          </div>
+          <div class="col-md-4 footerwz2">+86 178 558-11793</div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 footerwz2">© 2018 智梯 Inc.</div>
+          <div class="col-md-3 footerwz2">
+            <a href="makeABreakthrough.html">闯关</a>
+          </div>
+          <div class="col-md-4 footerwz2">杭州电子科技大学智梯团队</div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      initLabels();
+      function initLabels() {
+        $("#select1 li").click(function () {
+          var type = $(this).attr("data-type");
+          var copyThisB = $(this).clone();
+          if ($(this).hasClass("selected")) {
+            $(".select-result li[data-type='" + type + "']").fadeOut("normal", function () { $(this).remove(); });
+          } else {
+            $(".select-result ul").append(copyThisB);
+          };
+          $(this).toggleClass("selected");
+        });
+        $("#select2 li").click(function () {
+          var type = $(this).attr("data-type");
+          var copyThisB = $(this).clone();
+          if ($(this).hasClass("selected")) {
+            $(".select-result li[data-type='" + type + "']").fadeOut("normal", function () { $(this).remove(); });
+          } else {
+            $(".select-result ul").append(copyThisB);
+          };
+          $(this).toggleClass("selected");
+
+        });
+        $("#select3 li").click(function () {
+          var type = $(this).attr("data-type");
+          var copyThisB = $(this).clone();
+          if ($(this).hasClass("selected")) {
+            $(".select-result li[data-type='" + type + "']").fadeOut("normal", function () { $(this).remove(); });
+          } else {
+            $(".select-result ul").append(copyThisB);
+          };
+          $(this).toggleClass("selected");
+
+        });
+        $("#select4 li").click(function () {
+          var type = $(this).attr("data-type");
+          var copyThisB = $(this).clone();
+          if ($(this).hasClass("selected")) {
+            $(".select-result li[data-type='" + type + "']").fadeOut("normal", function () { $(this).remove(); });
+          } else {
+            $(".select-result ul").append(copyThisB);
+          };
+          $(this).toggleClass("selected");
+
+        });
+        $("#select5 li").click(function () {
+          var type = $(this).attr("data-type");
+          var copyThisB = $(this).clone();
+          if ($(this).hasClass("selected")) {
+            $(".select-result li[data-type='" + type + "']").fadeOut("normal", function () { $(this).remove(); });
+          } else {
+            $(".select-result ul").append(copyThisB);
+          };
+          $(this).toggleClass("selected");
+
+        });
+        $(".select-result ul").delegate("li", "click", function () {
+          var type = $(this).attr("data-type");
+          $(this).fadeOut("normal", function () { $(this).remove(); });
+          $("#select1 li[data-type='" + type + "']").removeClass("selected");
+        });
+        $(".select-result ul").delegate("li", "click", function () {
+          var type = $(this).attr("data-type");
+          $(this).fadeOut("normal", function () { $(this).remove(); });
+          $("#select2 li[data-type='" + type + "']").removeClass("selected");
+        });
+        $(".select-result ul").delegate("li", "click", function () {
+          var type = $(this).attr("data-type");
+          $(this).fadeOut("normal", function () { $(this).remove(); });
+          $("#select3 li[data-type='" + type + "']").removeClass("selected");
+        });
+        $(".select-result ul").delegate("li", "click", function () {
+          var type = $(this).attr("data-type");
+          $(this).fadeOut("normal", function () { $(this).remove(); });
+          $("#select4 li[data-type='" + type + "']").removeClass("selected");
+        });
+        $(".select-result ul").delegate("li", "click", function () {
+          var type = $(this).attr("data-type");
+          $(this).fadeOut("normal", function () { $(this).remove(); });
+          $("#select5 li[data-type='" + type + "']").removeClass("selected");
+        });
+      }
+    </script>
+
+</body>
+
+</html>

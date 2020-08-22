@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>我的团队（新建作业）</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/bootstrap.min.css" >
+<link rel="stylesheet" href="css/myTeam(newPage).css" >
+<link rel="stylesheet" href="css/main.css">
+  <script src="js/my/connect.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="homepage.html"><span class="navh1">智梯</span></a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">题库 <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">闯关</a></li>
+          <li><a href="#">排行榜</a></li>
+          <li><a href="#">信息管理</a></li>
+        </ul>
+        <form class="navbar-form navbar-left">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="请输入题库/测试">
+          </div>
+          <button type="submit" class="btn btn-default">搜索</button>
+        </form>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+<!--content  -->
+<div class="content_header">
+  <div class="mr">
+  <form>
+    <h1>新建作业</h1>
+  <div class="form-group">
+    <label for="pageName">作业名称</label>
+    <input type="text" class="form-control" id="pageName" placeholder="作业名称">
+  </div>
+  <div class="form-group">
+    <label for="pageSort">作业类别</label>
+    <input type="text" class="form-control" id="pageSort" placeholder="作业类别">
+  </div>
+  <div class="form-group">
+    <label for="">参与成员</label>
+    <h5>团队管理员</h5>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"> Check me out
+      </label>
+      <label>
+        <input type="checkbox"> Check me out
+      </label>
+
+    </div>
+    <h5>UPIC团队</h5>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"> Check me out
+      </label>
+      <label>
+        <input type="checkbox"> Check me out
+      </label>
+      <label>
+        <input type="checkbox"> Check me out
+      </label>
+      <label>
+        <input type="checkbox"> Check me out
+      </label>
+      <label>
+        <input type="checkbox"> Check me out
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">作业状态</label>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+  正常
+  </label>
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" >
+    存档
+  </label>
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+    不删除
+  </label>
+</div>
+</div>
+  <button type="submit" class="btn btn-default">保存</button>
+</form>
+</div>
+  <div>
+</body>
+
+</html>

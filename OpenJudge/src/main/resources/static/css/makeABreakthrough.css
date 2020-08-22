@@ -1,0 +1,288 @@
+.cg_csc {
+    left: 144px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 24px;
+    color: rgba(51, 51, 51, 1);
+    font-family: Roboto-Bold;
+}
+
+.cg_div {
+    float: left;
+    padding-top: 130px;
+    width: 200px;
+    height: 180px;
+    border-radius: 5px;
+    margin-left: 24px;
+    background-color: rgba(0, 119, 255, 0.05);
+    border: 1px solid rgba(0, 119, 255, 1);
+    background-image: url(../images/python.svg);
+    background-repeat: no-repeat;
+    background-position: center 30%;
+}
+
+.cg_div0 {
+    float: left;
+    padding-top: 130px;
+    width: 200px;
+    height: 180px;
+    border-radius: 5px;
+    margin-left: 24px;
+    background-color: rgba(0, 119, 255, 0.05);
+    border: 1px solid rgba(0, 119, 255, 1);
+    background-image: url(../images/python.svg);
+    background-repeat: no-repeat;
+    background-position: center 30%;
+}
+
+.cg_wz {
+    height: 21px;
+    line-height: 21px;
+    color: rgba(0, 119, 255, 1);
+    font-size: 15px;
+    text-align: center;
+    font-family: PingFang-SC-Medium;
+}
+
+.cg_wz1 {
+    height: 21px;
+    line-height: 21px;
+    color: rgba(255, 51, 102, 1);
+    font-size: 15px;
+    text-align: center;
+    font-family: PingFang-SC-Medium;
+}
+
+.cg_wz2 {
+    height: 21px;
+    line-height: 21px;
+    color: rgba(126, 211, 33, 1);
+    font-size: 15px;
+    text-align: center;
+    font-family: PingFang-SC-Medium;
+}
+
+.cg_wz3 {
+    height: 21px;
+    line-height: 21px;
+    color: rgba(248, 166, 65, 1);
+    font-size: 15px;
+    text-align: center;
+    font-family: PingFang-SC-Medium;
+}
+
+.cg_div1 {
+    float: left;
+    padding-top: 130px;
+    margin-left: 24px;
+    width: 200px;
+    height: 180px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 51, 102, 1);
+    background-image: url(../images/python1.svg);
+    background-repeat: no-repeat;
+    background-position: center 30%;
+}
+
+.cg_div2 {
+    float: left;
+    padding-top: 130px;
+    margin-left: 24px;
+    width: 200px;
+    height: 180px;
+    border-radius: 5px;
+    border: 1px solid rgba(126, 211, 33, 1);
+    background-image: url(../images/python2.svg);
+    background-repeat: no-repeat;
+    background-position: center 30%;
+}
+
+.cg_div3 {
+    float: left;
+    padding-top: 130px;
+    margin-left: 24px;
+    width: 200px;
+    height: 180px;
+    border-radius: 5px;
+    border: 1px solid rgba(248, 166, 65, 1);
+    background-image: url(../images/python3.svg);
+    background-repeat: no-repeat;
+    background-position: center 30%;
+}
+
+.cg_xscwz {
+    margin-top: 24px;
+    height: 33px;
+    line-height: 33px;
+    color: rgba(51, 51, 51, 1);
+    font-size: 24px;
+    font-family: PingFang-SC-Bold;
+}
+
+.cg_xscwz1 {
+    height: 17px;
+    line-height: 17px;
+    color: rgba(153, 153, 153, 1);
+    font-size: 12px;
+    font-family: PingFang-SC-Medium;
+}
+
+.progress-bar {
+    height: 20px;
+    left: 235px;
+    top: 571px;
+    width: 368px;
+    border-radius: 8px;
+    background-color: rgba(0, 119, 255, 1);
+}
+
+.xsc {
+    height: 21px;
+    line-height: 21px;
+    color: rgba(0, 119, 255, 1);
+    font-size: 14px;
+    text-align: center;
+    font-family: PingFang-SC-Medium;
+    cursor: pointer;
+}
+
+.wrap>div:hover {
+    background-color: rgba(231, 242, 252, 1);
+    border: 1px solid rgba(0, 119, 255, 1);
+}
+
+.wrap>div:active {
+    background-color: rgba(231, 242, 252, 1);
+    border: 1px solid rgba(0, 119, 255, 1);
+}
+
+.wrap>div {
+    float: left;
+    margin-left: 24px;
+    margin-bottom: 24px;
+    margin-top: 12px;
+    padding-top: 12px;
+    width: 200px;
+    height: 180px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(239, 244, 247, 1);
+}
+
+.xsc_wz {
+    height: 17px;
+    line-height: 17px;
+    color: rgba(153, 153, 153, 1);
+    font-size: 11px;
+    text-align: center;
+    font-family: PingFang-SC-Medium;
+}
+
+.xsc_dl {
+    height: 35px;
+    line-height: 17px;
+    color: rgba(153, 153, 153, 1);
+    font-size: 11px;
+    text-align: center;
+    font-family: PingFang-SC-Medium;
+}
+
+.xsc_dll {
+    padding-top: 24px;
+    height: 17px;
+    line-height: 17px;
+    color: rgba(153, 153, 153, 1);
+    font-size: 11px;
+    text-align: left;
+    font-family: PingFang-SC-Medium;
+}
+
+.xsc_db {
+    width: 180px;
+    height: 17px;
+    line-height: 17px;
+    color: rgba(153, 153, 153, 1);
+    font-size: 12px;
+    text-align: center;
+    font-family: PingFang-SC-Medium;
+}
+
+.cg_ndxswz {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    color: rgba(153, 153, 153, 1);
+    font-size: 12px;
+    font-family: PingFang-SC-Medium;
+}
+
+.cg_star {
+    float: left;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center 30%;
+}
+
+.star_1 {
+    background-image: url(../images/Star_1.svg);
+}
+
+.star_2 {
+    background-image: url(../images/Star_2.svg);
+}
+
+.star_3 {
+    background-image: url(../images/Star_3.svg);
+}
+
+.star_4 {
+    background-image: url(../images/Star_4.svg);
+}
+
+.star_5 {
+    background-image: url(../images/Star_5.svg);
+}
+
+.cg_tgrs {
+    height: 17px;
+    line-height: 17px;
+    color: rgba(153, 153, 153, 1);
+    font-size: 12px;
+    text-align: center;
+    font-family: PingFang-SC-Medium;
+}
+
+.bigWindow {
+    margin: 10px;
+    background-color: #e8f2ff;
+    padding: 20px;
+}
+
+.bigContent {
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 0.8);
+    padding: 16px;
+    font-size: 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #0077ff;
+    border-color: #0077ff;
+}
+
+a {
+    color: #0077ff;
+}
+
+.cscline-height {
+    margin-top: 24px;
+}
+
+.missionBox {
+	cursor: pointer;
+}

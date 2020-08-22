@@ -1,0 +1,38 @@
+
+.mr{
+  margin: 12px;
+}
+.b{
+  width: 50%;
+}
+.scsjd{
+margin-top: 24px;
+width: 144px;
+height: 25px;
+line-height: 25px;
+color: rgba(36, 41, 47, 1);
+font-size: 18px;
+text-align: left;
+font-family: PingFang-SC-Medium;
+
+}
+.scsjdc{
+margin-top: 24px;
+width: 80%;
+height: 75px;
+line-height: 25px;
+color: rgba(36, 41, 47, 1);
+font-size: 18px;
+text-align: left;
+font-family: PingFang-SC-Medium;
+
+}
+a {
+    color: #0077ff;
+    text-decoration: none;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #0077ff;
+    border-color: #0077ff;
+}

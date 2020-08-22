@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		新一代的编程学习平台-智梯 题库(问题详情)
+	</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/questionBankDetails.css">
+	<script src="js/my/connect.js"></script>
+	<script src="js/jquery.min.js">
+	</script>
+	<script src="js/bootstrap.min.js">
+	</script>
+	<script src="js/my/questionBankDetails.js">
+	</script>
+</head>
+
+<body>
+<div id="codeModal" class="modal fade" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">查看代码</h4>
+				</div>
+				<div class="modal-body">
+					<div id="editor2"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="homepage.html">
+					<span class="navh1">
+						智梯
+					</span>
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="questionBank.html">题库
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li>
+						<a href="makeABreakthrough.html">闯关</a>
+					</li>
+					<li>
+						<a href="ranklist.html">排行榜</a>
+					</li>
+					<li>
+						<a href="myTeam.html">我的团队</a>
+					</li>
+				</ul>
+				<form class="navbar-form navbar-left">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="请输入题库/测试">
+					</div>
+					<button type="submit" class="btn btn-default">
+						搜索
+					</button>
+				</form>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+	<!--content-->
+	<div class="content_header">
+		<div class="">
+			<ol class="breadcrumb">
+				<li>
+					<a href="questionBank.html">
+						题库
+					</a>
+				</li>
+				<!-- <li>
+					<a href="#">
+
+					</a>
+				</li> -->
+				<li class="active">
+					加载中...
+				</li>
+			</ol>
+			<p class="cg_bt">
+				加载中...
+			</p>
+			<div class="row">
+				<!-- <div class="col-md-1">
+						.col-md-6
+					</div>
+					<div class="col-md-2">
+						作者张三
+					</div> -->
+			</div>
+			<ul id="myTab" class="nav nav-tabs">
+				<li class="active">
+					<a href="#wzxq" data-toggle="tab">
+						问题详情
+					</a>
+				</li>
+				<li>
+					<a id="showHistory" href="#tjjl" data-toggle="tab">
+						提交记录
+					</a>
+				</li>
+				<li>
+					<a href="#tj" data-toggle="tab">
+						题解
+					</a>
+				</li>
+			</ul>
+			<div id="myTabContent" class="tab-content">
+				<div class="tab-pane fade in active" id="wzxq">
+					<div class="row">
+						<div class="col-md-8">
+							<div class="wzxq_1">
+								<h3>题目背景</h3>
+								<div>加载中...</div>
+							</div>
+							<hr>
+							<div class="wzxq_1">
+								<h3>题目描述</h3>
+								<div>加载中...</div>
+							</div>
+							<hr>
+							<div class="wzxq_1">
+								<h3>输入格式</h3>
+								<div id="wzxq_bgc">
+									<div id="wzxq_wz1">
+										<div>加载中...</div>
+									</div>
+								</div>
+							</div>
+							<hr>
+							<div class="wzxq_1">
+								<h3>输出格式</h3>
+								<div id="wzxq_bgc">
+									<div id="wzxq_wz1">
+										<div>加载中...</div>
+									</div>
+								</div>
+							</div>
+							<hr>
+							<div id="examples">
+								<div class="wzxq_1">
+									<h3>输入样例1</h3>
+									<div id="wzxq_bgc">
+										<div id="wzxq_wz1">
+											<div>加载中...</div>
+										</div>
+									</div>
+								</div>
+								<div class="wzxq_1">
+									<h3>输出样例1</h3>
+									<div id="wzxq_bgc">
+										<div id="wzxq_wz1">
+											<div>加载中...</div>
+										</div>
+									</div>
+								</div>
+								<hr>
+							</div>
+							<div class="wzxq_1">
+								<h3>你的代码</h3>
+								<!-- <textarea id="codeText" class="form-control" rows="20" cols="30"></textarea> -->
+								<div id="editor1"></div>
+							</div>
+							<hr>
+							<div class="wzxq_1">
+								<button class="btn btn-default">提交代码</button>
+							</div>
+
+						</div>
+						<div class="col-md-4">
+							<div class="wzxq_leftC">
+								<div class="wzxq_tx">
+								</div>
+								<div class="wzxq_wz2">
+									加载中...
+								</div>
+								<div class="wzxq_wz2">
+									加载中...
+								</div>
+								<div class="row">
+									<div class="col-md-4">
+										题目来源
+									</div>
+									<div class="col-md-8">
+										“跟我学编程”2018版第一章
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-4">
+										知识点
+									</div>
+									<div class="col-md-8">
+										加载中...
+										<!-- <span class="label label-primary">
+												字符串
+											</span>
+											<span class="label label-success">
+												排序
+											</span>
+											<span class="label label-info">
+												算法
+											</span> -->
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										时间限制
+									</div>
+									<div class="col-md-6">
+										加载中...
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										内存限制
+									</div>
+									<div class="col-md-6">
+										加载中...
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										代码长度限制
+									</div>
+									<div class="col-md-6">
+										16kb
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="tjjl">
+					<table class="table table-striped">
+						<tr>
+							<td>提交时间</td>
+							<td>用户名</td>
+							<td>时间限制</td>
+							<td>内存限制</td>
+							<td>结果</td>
+							<td>得分</td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+				<div class="tab-pane fade" id="tj">
+					<div class="row tj_fl">
+						<div class="col-xs-12 col-sm-6 col-md-8 tj_h1">
+							以下题解仅供学习参考使用。 抄袭、复制题解，以达到刷AC率/AC数量或其他目的的行为，在智梯是严格禁止的。 智梯非常重视学术诚信。此类行为将会导致您成为作弊者。具体细则请查看智梯规则。
+						</div>
+						<div class="col-xs-6 col-md-4">
+							<div class="tj_r">
+								<div class="row">
+									<div class="col-md-4 tj_rh1">
+										题目
+									</div>
+									<div class="col-md-6 tj_rh1act">
+										加载中...
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-4 tj_rh1">
+										总数量
+									</div>
+									<div class="col-md-6 tj_rh1act">
+										加载中...
+									</div>
+								</div>
+								<button type="button" id="releaseQuestionSolution" class="btn btn-zdy" onclick="">
+									发布题解
+								</button>
+							</div>
+						</div>
+					</div>
+					<div id="tijieBox">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/ace/mode-python.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/ace/theme-chrome.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		var editor1 = ace.edit("editor1");
+		var editor2 = ace.edit("editor2");
+		var PythonMode = ace.require("ace/mode/python").Mode;
+		editor1.setTheme("ace/theme/chrome");
+		editor2.setTheme("ace/theme/chrome");
+		editor1.session.setMode(new PythonMode());
+		editor2.session.setMode(new PythonMode());
+		editor2.setReadOnly(true);
+	</script>
+	<script>
+		$(function () {
+			$('#myTab li:eq(0) a').tab('show');
+		});
+	</script>
+</body>
+
+</html>

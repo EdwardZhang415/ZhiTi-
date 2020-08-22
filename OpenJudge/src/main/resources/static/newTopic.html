@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>新一代的编程学习平台-智梯 我的团队（新建作业）</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/newTopic.css">
+  <link rel="stylesheet" href="css/my/topic.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/my/connect.js"></script>
+  <script src="js/my/login.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/my/newTopic.js"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="homepage.html">
+        <span class="navh1">智梯</span>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a href="#">题库
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li>
+          <a href="makeABreakthrough.html">闯关</a>
+        </li>
+        <li>
+          <a href="ranklist.html">排行榜</a>
+        </li>
+        <li>
+          <a href="myTeam.html">我的团队</a>
+        </li>
+      </ul>
+      <div class="navbar-form navbar-left nav-search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="请输入题库/测试">
+        </div>
+        <button class="btn btn-default" id="nav-search">搜索</button>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="#" id="userWelcome"></a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <span class="glyphicon glyphicon-user"></span>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="people.html">个人中心</a>
+            </li>
+            <li>
+              <a href="myTeam.html">我的团队</a>
+            </li>
+            <li>
+              <a href="#">我的收藏</a>
+            </li>
+            <li>
+              <a href="#">我的测试</a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li>
+              <a href="#">提交记录</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+  <!--content  -->
+  <div class="content_header">
+    <div class="mr">
+      <div>
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active">
+            <a href="#topicContent" aria-controls="topicContent" role="tab" data-toggle="tab">题目内容</a>
+          </li>
+          <li role="presentation">
+            <a href="#uploadDataPoint" aria-controls="uploadDataPoint" role="tab" data-toggle="tab">上传数据点</a>
+          </li>
+          <li role="presentation">
+            <a href="#dataPointSet" aria-controls="dataPointSet" role="tab" data-toggle="tab">数据点设置</a>
+          </li>
+          <li role="presentation">
+            <a href="#topicTransfer" aria-controls="topicTransfer" role="tab" data-toggle="tab">题目迁移</a>
+          </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <!--题目内容开始  -->
+          <div role="tabpanel" class="tab-pane active" id="topicContent">
+            <div class="mr">
+              <div>
+                <div class="form-group">
+                  <label for="topicName">题目名称</label>
+                  <input type="text" class="form-control" id="questionName" placeholder="题目名称">
+                </div>
+                <div class="form-group">
+                  <label for="topicedit">题目背景</label>
+                  <textarea id="background" class="form-control" rows="3"></textarea>
+                  <p class="help-block">有趣的背景可以吸引做题者</p>
+                </div>
+                <div class="form-group">
+                  <label for="">题目描述</label>
+                  <textarea id="describtion" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="">输入格式</label>
+                  <textarea class="form-control" rows="3" id="input"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="">输出格式</label>
+                  <textarea class="form-control" rows="3" id="output"></textarea>
+                </div>
+                <div id="inoutExamples">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <textarea class="form-control" placeholder="输入样例" style="height: 100px"></textarea>
+                    </div>
+                    <div class="col-md-6">
+                      <textarea class="form-control" placeholder="输出样例" style="height: 100px"></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="row" style="margin-top:50px;">
+                  <div class="col-md-6">
+                    <button type="button" class="btn btn-primary" onclick="newinoutExample();">新建输入输出样例</button>
+                  </div>
+                </div>
+                <div class="row" style="margin-top:40px;">
+                  <div class="col-md-6">
+                    <label for="">内存限制</label>
+                    <div class="input-group b">
+                      <input type="text" class="form-control " id="memoryLimit" placeholder="60" aria-describedby="basic-addon2">
+                      <span class="input-group-addon" id="basic-addon2">mb</span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="">时间限制</label>
+                    <div class="input-group b">
+                      <input type="text" class="form-control b" id="timeLimit" placeholder="60" aria-describedby="basic-addon2">
+                      <span class="input-group-addon" id="basic-addon3">ms</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- <div class="row" style="margin-top:40px;">
+				  <div class="col-md-1"><label for="">说明：</label></div>
+				  <div class="col-md-11">
+					  <textarea class="form-control" style="height: 100px;"></textarea>
+				  </div>
+			  </div> -->
+
+                <div class="row" style="padding-top: 40px;">
+                  <div class="col-md-2">
+                    <label for="">知识点标签：</label>
+                  </div>
+                  <div id="theLabels"></div>
+
+                </div>
+
+                <div class="row" style="margin-top:40px;">
+                  <div class="col-md-2">
+                    <label for="">目标公开：</label>
+                  </div>
+                  <div class="col-md-2">
+                    <input type="radio" name="publicTypeNum" value="3" checked>公开</div>
+                  <div class="col-md-2">
+                    <input type="radio" name="publicTypeNum" value="2">部分公开</div>
+                  <div class="col-md-2">
+                    <input type="radio" name="publicTypeNum" value="1">不公开</div>
+
+                </div>
+                <div class="row" style="margin-top:40px;">
+                  <div class="col-md-2">
+                    <label for="">题目难度：</label>
+                  </div>
+                  <div class="col-md-1">
+                    <input type="radio" name="difficult" value="1" checked>一星级</div>
+                  <div class="col-md-1">
+                    <input type="radio" name="difficult" value="2">二星级</div>
+                  <div class="col-md-1">
+                    <input type="radio" name="difficult" value="3">三星级</div>
+                  <div class="col-md-1">
+                    <input type="radio" name="difficult" value="4">四星级</div>
+                  <div class="col-md-1">
+                    <input type="radio" name="difficult" value="5">五星级</div>
+
+                </div>
+                <div class="row bottom">
+                  <button type="button" class="btn btn-primary right" onclick="uploadQuestion_new();">保存</button>
+                  <button type="button" class="btn btn-primary right">取消</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- 题目内容结束 -->
+          <div role="tabpanel" class="tab-pane" id="uploadDataPoint">
+            <div class="mr">
+              <div class="scsjd">上传压缩包要求：</div>
+              <div class="scsjdc">直接将若干数据点打包成一个ZIP压缩包，rar和其他格式不能成功。 没有任何文件夹或者其他无关文件，压缩后大小不超过20M。 测试点文件名只能允许有连续的一段数字，例如‘game001.in’可以，而‘T-1.in’或‘game.in’不可以。
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile" style="display: none;">加载中...</label>
+                <form id="fileUploadForm">
+                  <input name="file" type="file" id="exampleInputFile">
+                  <input name="questionId" style="display: none;">
+                </form>
+                <p class="help-block">支持扩展名为.rar、.zip、.doc、.docx</p>
+                <button class="btn btn-default">上传</button>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="dataPointSet">
+
+            <div class="row mr">
+              <div class="col-md-4">一键更改所有限制</div>
+              <div class="col-md-4">
+                <div class="input-group b">
+                  <input type="text" class="form-control" placeholder="60" aria-describedby="basic-addon2">
+                  <span class="input-group-addon" id="basic-addon2">ms</span>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="input-group b">
+                  <input type="text" class="form-control" placeholder="60" aria-describedby="basic-addon2">
+                  <span class="input-group-addon" id="basic-addon2">kb</span>
+                </div>
+              </div>
+            </div>
+            <div id="dataPointBox">
+              <div class="row mr" testcase-id="1">
+                <div class="col-md-4">加载中...</div>
+                <div class="col-md-4">
+                  <div class="input-group b">
+                    <input type="text" class="form-control" placeholder="60" aria-describedby="basic-addon2">
+                    <span class="input-group-addon" id="basic-addon2">ms</span>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="input-group b">
+                    <input type="text" class="form-control" placeholder="60" aria-describedby="basic-addon2">
+                    <span class="input-group-addon" id="basic-addon2">kb</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mr buttonbox">
+              <button class="btn btn-success">显示高级设置</button>
+              <button class="btn btn-primary">保存设置</button>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="topicTransfer">
+            <div class="mr">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> 迁移至私人题库
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> 部分公开
+                </label>
+              </div>
+              <button class="btn btn-success">迁移</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<div class="footer">
+  <div class="footerContent">
+    <div class="row">
+      <div class="col-md-4 footerwz1">智梯</div>
+      <div class="col-md-3 footerwz2">菜单</div>
+      <div class="col-md-4 footerwz2">联系我们</div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 footerwz2">在智梯享受Coding的乐趣</div>
+      <div class="col-md-3 footerwz2">
+        <a href="questionBank.html">题库</a>
+      </div>
+      <div class="col-md-4 footerwz2">+86 178 558-11793</div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 footerwz2">© 2018 智梯 Inc.</div>
+      <div class="col-md-3 footerwz2">
+        <a href="makeABreakthrough.html">闯关</a>
+      </div>
+      <div class="col-md-4 footerwz2">杭州电子科技大学智梯团队</div>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

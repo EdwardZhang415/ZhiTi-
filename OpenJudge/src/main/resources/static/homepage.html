@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>新一代的编程学习平台-智梯</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <script src="js/my/connect.js"></script>
+  <script src="js/my/homepage.js"></script>
+  <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="js/swiper/css/swiper.min.css">
+  <link rel="stylesheet" href="css/my/homepage.css">
+  <style type="text/css">
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <div class="navbar-logo"></div>
+      </div>
+      <div class="collapse navbar-collapse navbar-right">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="">首页</a></li>
+          <li><a href="/questionBank.html">教学模块</a></li>
+          <li><a href="/makeABreakthrough.html">趣味编程</a></li>
+          <li><a href="/people.html#unfinished">学习计划</a></li>
+          <li><a href="/myTeam.html">我的团队</a></li>
+          <li><a href="/people.html">个人中心</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <a href="/questionBank.html" class="swiper-slide" style="background-image: url('/images/swiper1.png')"></a>
+      <div class="swiper-slide" style="background-image: url('/images/swiper2.png')"></div>
+      <div class="swiper-slide" style="background-image: url('/images/swiper3.png')"></div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+    
+    <!-- 如果需要导航按钮 -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <div class="navlist">
+    <div class="navlist-title">我们能做什么</div>
+    <div class="navlist-list">
+      <div class="navlist-list-item"><a href="/myTeam.html"><img src="/images/icon4.png"><span>团队管理</span></a></div>
+      <div class="navlist-list-item"><a href="/makeABreakthrough.html"><img src="/images/icon3.png"><span>分级试炼场</span></a></div>
+      <div class="navlist-list-item"><a href="/questionBank.html"><img src="/images/icon5.png"><span>个性化题库</span></a></div>
+      <div class="navlist-list-item"><a href="https://www.juhe.cn/docs"><img src="/images/icon2.png"><span><font color="#D3D3D3">云服务平台</font></span></a></div>
+      <div class="navlist-list-item"><a href="http://study.163.com/course/introduction.htm?courseId=1003057011#/courseDetail?tab=1"><img src="/images/icon6.png"><span><font color="#D3D3D3">微课教学</font> </span></a></div>
+      <div class="navlist-list-item"><a href="https://www.topcoder.com"><img src="/images/icon1.png"><span><font color="#D3D3D3"> 限时悬赏任务</font></span></a></div>
+    </div>
+  </div>
+  <footer>版权所有: 杭州电子科技大学智梯团队</footer>
+  
+  <script src="js/swiper/js/swiper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/my/homepage.js"></script>
+  <script>        
+    var mySwiper = new Swiper ('.swiper-container', {
+      loop: true,
+      autoplay: {
+        delay: 5000, //轮播图切换间隔
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    })        
+  </script>
+</body>
+
+</html>
