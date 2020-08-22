@@ -1,7 +1,7 @@
-# upicoj
+＃智梯
 
 #### 项目介绍
-oj
+智梯 新一代编程教学平台 本开源项目为项目测试DEMO 正式版见http://hacker.yunqilab.cn/login
 
 #### 软件架构
 软件架构说明
